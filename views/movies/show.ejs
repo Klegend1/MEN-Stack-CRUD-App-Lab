@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Page</title>
+</head>
+<body>
+    <h1>Movie Page</h1>
+    <h2>Name: <%=movie.name %> </h2>
+
+    <% if (movie.isReadyToWatch) { %>
+        <p>This movie is ready to watch!</p>
+      <% } else { %>
+        <p>This movie is not ready to watch!</p>
+      <% } %>
+      
+    <form method="POST" action="/movies/<%= movie._id%>?_method=DELETE">
+        <button type="submit">Delete Movie</button>
+    </form>
+
+</body>
+</html>
